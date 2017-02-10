@@ -4,7 +4,7 @@ Curso PHP Básico
 Aprenda do jeito certo
 ----------------------
 
-![](img/media/image1.jpg){width="3.1251968503937007in"
+![](img/image1.jpg){width="3.1251968503937007in"
 height="3.1251968503937007in"}
 
 Bem-vindo ao curso PHP Básico do Jeito Certo. Nessa apostila você não

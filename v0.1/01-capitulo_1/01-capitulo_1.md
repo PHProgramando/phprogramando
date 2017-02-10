@@ -43,6 +43,8 @@ outros protocolos.
 Como funciona o PHP
 -------------------
 
+![Esquema de uma requisição a uma página PHP](img/image2.jpg)
+
 Requisitos do Sistema Operacional
 ---------------------------------
 
@@ -76,6 +78,8 @@ libapache2-mod-php5
 
 Abra o browser e digite [http://localhost](http://localhost/).
 
+![Figura 2: A imagem indica que o Apache está rodando.](img/image3.png)
+
 ###  Configurando o Apache
 
 Para podermos criar nossos projetos de uma forma mais fácil e sem
@@ -105,6 +109,8 @@ Salve em */home/seu\_usuario/www/*, no browser digite
 **Nota:** É recomendado por questões de segurança que arquivos que sejam
 somente PHP, não tenha a tag de fechamento e que contenha a última linha
 em branco.
+
+![Figura 3: Essa tela indica que o PHP está rodando perfeitamente](img/image4.png)
 
 ### \
 Testando o phpMyAdmin
