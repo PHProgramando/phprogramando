@@ -23,10 +23,10 @@ validações e refatorações a serem feitas.
 Estrutura de diretórios do projeto
 ----------------------------------
 
-![](img/image5.jpg){width="2.0936996937882766in" height="3.083464566929134in"}
+![](img/image5.jpg)
 ------------------------------------------------------------------------------------
 
-![](img/image6.jpg){width="5.833464566929134in" height="4.187400481189851in"}Banco de Dados
+![](img/image6.jpg)Banco de Dados
 -------------------------------------------------------------------------------------------------
 
 Baixando Frameworks de JavaScript e CSS
