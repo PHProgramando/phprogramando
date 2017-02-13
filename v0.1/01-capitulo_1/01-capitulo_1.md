@@ -78,7 +78,7 @@ libapache2-mod-php5
 
 Abra o browser e digite [http://localhost](http://localhost/).
 
-![Figura 2: A imagem indica que o Apache está rodando.](img/image3.png)
+![Figura 2: A imagem indica que o Apache está rodando.](img/image3.jpg)
 
 ###  Configurando o Apache
 
@@ -110,7 +110,7 @@ Salve em */home/seu\_usuario/www/*, no browser digite
 somente PHP, não tenha a tag de fechamento e que contenha a última linha
 em branco.
 
-![Figura 3: Essa tela indica que o PHP está rodando perfeitamente](img/image4.png)
+![Figura 3: Essa tela indica que o PHP está rodando perfeitamente](img/image4.jpg)
 
 ### \
 Testando o phpMyAdmin

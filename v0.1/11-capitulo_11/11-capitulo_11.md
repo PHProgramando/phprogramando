@@ -23,10 +23,10 @@ validações e refatorações a serem feitas.
 Estrutura de diretórios do projeto
 ----------------------------------
 
-![](img/image5.png){width="2.0936996937882766in" height="3.083464566929134in"}
+![](img/image5.jpg){width="2.0936996937882766in" height="3.083464566929134in"}
 ------------------------------------------------------------------------------------
 
-![](img/image6.png){width="5.833464566929134in" height="4.187400481189851in"}Banco de Dados
+![](img/image6.jpg){width="5.833464566929134in" height="4.187400481189851in"}Banco de Dados
 -------------------------------------------------------------------------------------------------
 
 Baixando Frameworks de JavaScript e CSS
@@ -1719,11 +1719,11 @@ Primeiras telas do sistema
 
 A tela de login deverá ser apresentada como na figura 4:
 
-![Figura 4: Tela de Login da Aplicação](img/image7.png)
+![Figura 4: Tela de Login da Aplicação](img/image7.jpg)
 
 Após a autenticação a tela deve ser parecida com figura 5:
 
-![Figura 5: Tela principal da aplicação - Listagem das tarefas (Precisa estar logado)](img/image8.png)
+![Figura 5: Tela principal da aplicação - Listagem das tarefas (Precisa estar logado)](img/image8.jpg)
 
 Autenticação
 ------------
@@ -2744,7 +2744,7 @@ Setores
 *Salve em
 /home/seu\_usuario/www/PHPBasico/atividades/public/setores/queries.php*.
 
-![](img/image9.png){width="6.299212598425197in"
+![](img/image9.jpg){width="6.299212598425197in"
 height="2.780708661417323in"}
 
 1.  &lt;?php
@@ -2914,7 +2914,7 @@ height="2.780708661417323in"}
 *Salve em
 /home/seu\_usuario/www/PHPBasico/atividades/public/setores/index.php*.
 
-![](img/image10.png){width="6.299212598425197in"
+![](img/image10.jpg){width="6.299212598425197in"
 height="3.030708661417323in"}
 
 1.  &lt;?php
@@ -3067,7 +3067,7 @@ height="3.030708661417323in"}
 *Salve em
 /home/seu\_usuario/www/PHPBasico/atividades/public/setores/form.php*.
 
-![](img/image11.png){width="6.299212598425197in"
+![](img/image11.jpg){width="6.299212598425197in"
 height="1.0110236220472442in"}
 
 1.  &lt;?php
@@ -3602,7 +3602,7 @@ Status Atividade
 *Salve em
 /home/seu\_usuario/www/PHPBasico/atividades/public/status-atividade/queries.php*.
 
-![](img/image12.png){width="6.299212598425197in"
+![](img/image12.jpg){width="6.299212598425197in"
 height="2.4220461504811897in"}
 
 1.  &lt;?php
@@ -3770,7 +3770,7 @@ height="2.4220461504811897in"}
 *Salve em
 /home/seu\_usuario/www/PHPBasico/atividades/public/status-atividade/index.php*.
 
-![](img/image13.png){width="6.299212598425197in"
+![](img/image13.jpg){width="6.299212598425197in"
 height="2.309841426071741in"}
 
 1.  &lt;?php
@@ -3901,7 +3901,7 @@ height="2.309841426071741in"}
 *Salve em
 /home/seu\_usuario/www/PHPBasico/atividades/public/status-atividade/form.php*.
 
-![](img/image14.png){width="6.299212598425197in"
+![](img/image14.jpg){width="6.299212598425197in"
 height="0.8456692913385827in"}
 
 1.  &lt;?php
@@ -4413,7 +4413,7 @@ Usuários
 *Salve em
 /home/seu\_usuario/www/PHPBasico/atividades/public/usuarios/queries.php*.
 
-![](img/image15.png){width="6.299212598425197in"
+![](img/image15.jpg){width="6.299212598425197in"
 height="2.0811023622047244in"}
 
 1.  &lt;?php
@@ -4660,7 +4660,7 @@ height="2.0811023622047244in"}
 *Salve em
 /home/seu\_usuario/www/PHPBasico/atividades/public/usuarios/passwordIsStrong.php*.
 
-![](img/image16.png){width="6.299212598425197in"
+![](img/image16.jpg){width="6.299212598425197in"
 height="4.130708661417323in"}
 
 1.  &lt;?php
@@ -5049,7 +5049,7 @@ maíuscula; \\nUma letra minúscula.');
 *Salve em
 /home/seu\_usuario/www/PHPBasico/atividades/public/assets/js/ajaxFormUsers.js*.
 
-![](img/image17.png){width="6.299212598425197in"
+![](img/image17.jpg){width="6.299212598425197in"
 height="1.5102351268591425in"}
 
 1.  &lt;?php
@@ -5766,7 +5766,7 @@ height="1.5102351268591425in"}
 *Salve em
 /home/seu\_usuario/www/PHPBasico/atividades/public/atividades/queries.php*.
 
-![](img/image18.png){width="6.299212598425197in"
+![](img/image18.jpg){width="6.299212598425197in"
 height="2.089763779527559in"}
 
 1.  &lt;?php
@@ -5958,7 +5958,7 @@ height="2.089763779527559in"}
 *Salve em
 /home/seu\_usuario/www/PHPBasico/atividades/public/atividades/index.php*.
 
-![](img/image19.png){width="6.299212598425197in"
+![](img/image19.jpg){width="6.299212598425197in"
 height="5.997244094488189in"}
 
 1.  &lt;?php
@@ -6438,7 +6438,7 @@ locale: 'pt-br'
 
 */home/seu\_usuario/www/PHPBasico/atividades/public/assets/js/*ajaxFormActivities.js.
 
-![](img/image20.png){width="6.299212598425197in"
+![](img/image20.jpg){width="6.299212598425197in"
 height="1.9043307086614174in"}
 
 1.  &lt;?php
