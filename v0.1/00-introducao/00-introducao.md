@@ -17,7 +17,4 @@ bootstrap e o framework de JavaScrpt jQuery.
 Agradecimentos
 --------------
 
-Agradecimento especial a minha esposa Keylla Cristhiane Corrêa de
-Almeida por me ajudar a corrigir a apostila e agradecimentos aos meus
-colegas desenvolvedores Vitor e Raphael que me ajudaram com a correção e
-verificação técnica do conteúdo da apostila.
+Agradecimento especial a minha esposa Keylla Cristhiane de Almeida Corrêa por me ajudar a corrigir a apostila e agradecimentos aos meus colegas desenvolvedores Vitor e Raphael que me ajudaram com a correção e verificação técnica do conteúdo da apostila.
