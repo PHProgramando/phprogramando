@@ -99,9 +99,10 @@ sinal tralha na frente da linha. Adicione *DocumentRoot
 
 Crie um arquivo chamado *info.php.*
 
-1.  &lt;?php phpinfo();
+```
+<?php phpinfo();
 
-2.  
+```
 
 Salve em */home/seu\_usuario/www/*, no browser digite
 [*http://localhost/info.php*](http://localhost/info.php).
@@ -132,13 +133,9 @@ Para o ambiente de desenvolvimento é altamente recomendado habilitar as
 seguintes diretrizes:
 
 -   error\_reporting = E\_ALL
-
 -   display\_errors = On
-
 -   log\_errors = On
-
 -   track\_errors = On
-
 -   html\_errors = On
 
 As diretrizes acima fazem que quais quer tipo de erro seja exibido,
@@ -210,15 +207,10 @@ o padrão adotado nos argumentos de funções e métodos de classes.
 ### Tipos de variáveis
 
 -   Inteiro
-
 -   Array
-
 -   Objeto
-
 -   String
-
 -   Ponto flutuante
-
 -   Boolean
 
 ### Constantes
