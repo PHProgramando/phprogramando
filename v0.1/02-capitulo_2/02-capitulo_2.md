@@ -19,7 +19,6 @@ float). Se forem de outro tipo, terão seus valores convertidos antes da
 realização da operação.
 
   +    Adição
-  ---- ---------------------------
   -    Subtração
   \*   Multiplicação
   /    Divisão
@@ -30,7 +29,6 @@ realização da operação.
 Só há um operador exclusivo para strings (ponto):
 
   .   Concatenação
-  --- --------------
 
 ### De atribuição
 
@@ -41,7 +39,6 @@ o resultado para o primeiro. A atribuição é sempre por valor, e não por
 referência.
 
   =     Atribuição simples
-  ----- ------------------------------
   +=    Atribuição com adição
   -=    Atribuição com subtração
   \*=   Atribuição com multiplicação
@@ -56,7 +53,6 @@ referência.
 Comparam dois números bit a bit.
 
   &          “e” lógico
-  ---------- --------------------
   |          “ou” lógico (pipe)
   \^         “ou” exclusivo
   \~         Não (inversão)
@@ -68,7 +64,6 @@ Comparam dois números bit a bit.
 Utilizados para inteiros representando valores booleanos.
 
   and   “e” lógico
-  ----- -------------------------
   or    “ou” lógico (pipe)
   xor   “ou” exclusivo
   !     Não (inversão)
@@ -81,7 +76,6 @@ As comparações são feitas entre os valores contidos nas variáveis, e não
 as referências. Sempre retornam um valor booleano.
 
   ==      Igual a
-  ------- ------------------
   !       Diferente
   &lt;    Menor que
   &gt;    Maior que
@@ -94,7 +88,7 @@ Existe um operador de seleção que é ternário. O interpretador PHP avalia
 a primeira expressão. Se ela for verdadeira, a expressão retorna o valor
 de expressão2. Senão, retorna o valor de expressão3.
 
-1.  &lt;?php ( expressao1 ) ? ( expressao2 ) : ( expressao3 );
+<?php ( expressao1 ) ? ( expressao2 ) : ( expressao3 );
 
 ### 
 
@@ -106,7 +100,6 @@ decrementá-la. Quando utilizado depois, retorna o valor da variável já
 incrementado ou decrementado.
 
   ++   Incremento
-  ---- ------------
   --   Decremento
 
 ### Ordem de precedências dos operadores
