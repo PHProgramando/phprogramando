@@ -237,11 +237,11 @@ Primeiros passos com PHP
 Crie um diretório chamado */home/seu\_usuario/www/cap1*.
 ```
 <!DOCTYPE html>
-   <html>
-       <head>
-           <meta charset="UTF-8">
-           <title>Curso PHP Básico do Jeito Certo</title>
-       </head>
+<html>
+    <head>
+       <meta charset="UTF-8">
+       <title>Curso PHP Básico do Jeito Certo</title>
+    </head>
     <body>
         <?= "Bem-vindo ao PHP"; ?>
     </body>
@@ -256,82 +256,60 @@ TAGs HTML 5. Iremos agora modificar o arquivo criado acima e implementar
 os conceitos aprendidos nos tópicos já aprendidos.
 
 **Nota:** Nos arquivos PHP que forem usados para exibição do HTML como
-no exemplo acima é recomendado o uso da tag, &lt;?= ?&gt; ao invés da
-tag &lt;?php echo ?&gt;
+no exemplo acima é recomendado o uso da tag, `&lt;`?= ?`&gt;` ao invés da
+tag `&lt;`?php echo ?`&gt`;
 
-1.  &lt;!DOCTYPE html&gt;
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Básico - PHP do Jeito Certo</title>
+    </head>
+    
+    <body>
+    <?= '<h1>Bem-vindo ao PHP</h1>';
+    echo '<h2>Variáveis e Constantes</h2>';
+    //Isso é um comentário de uma linha
 
-2.  &lt;html&gt;
+    //vamos estudar agora as variáveis
+    $nome = 'Anna Clara'; //Variável tipo string
 
-3.  &lt;head&gt;
+    $sobrenome = 'Da Fonseca'; //Variável tipo string
 
-4.  &lt;meta charset="UTF-8"&gt;
+    $idade = 33; //Variável tipo integer
 
-5.  &lt;title&gt;Curso Básico - PHP do Jeito Certo&lt;/title&gt;
+    $altura = 1.69; //Variável tipo float
 
-6.  &lt;/head&gt;
+    $genteFina = true; //Variável tipo boolean
 
-7.  &lt;body&gt;
+    \* Comentário em bloco muito usado para grandes descrições
+    * Exibindo o resultado no navegador
+    */
 
-8.  &lt;?= '&lt;h1&gt;Bem-vindo ao PHP&lt;/h1&gt;';
+    echo $nome . '<br />';
+    echo $sobrenome . '<br />';
+    echo $idade . "<br />";
+    echo $altura . '<br />';
+    echo $genteFina . '<br /><br />'; //Esse 1 representa um true (verdadeiro)
 
-9.  echo '&lt;h2&gt;Variáveis e Constantes&lt;/h2&gt;';
+    //Agrupando as variáveis em um texto
+    echo 'Olá meu nome é ' . $nome . ' ' . $sobrenome . '. <br/>';
 
-10. //Isso é um comentário de uma linha
+    echo 'Tenho ' . $idade . ' anos e minha altura é ' . $altura . 'm<br /><hr />';
 
-11. //vamos estudar agora as variáveis
+    //Constantes
+    define('SO', 'GNU/Linux Ubuntu'); //definindo uma constante
+    define('FERRAMENTAS_ESCRITORIO', 'LibreOffice');
 
-12. \$nome = 'Anna Clara'; //Variável tipo string
+    echo 'Eu uso ' . SO . ' com ' . FERRAMENTAS_ESCRITORIO;
 
-13. \$sobrenome = 'Da Fonseca'; //Variável tipo string
+    '<br /> O Valor de PI é: ' . M_PI //Constante Interna do PHP
 
-14. \$idade = 33; //Variável tipo integer
-
-15. \$altura = 1.69; //Variável tipo float
-
-16. \$genteFina = true; //Variável tipo boolean
-
-17. 18. /\* Comentário em bloco muito usado para grandes descrições
-
-19. \* Exibindo o resultado no navegador
-
-20. \*/
-
-21. echo \$nome . '&lt;br /&gt;';
-
-22. echo \$sobrenome . '&lt;br /&gt;';
-
-23. echo \$idade . "&lt;br /&gt;";
-
-24. echo \$altura . '&lt;br /&gt;';
-
-25. echo \$genteFina . '&lt;br /&gt;&lt;br /&gt;'; //Esse 1 representa
-    um true (verdadeiro)
-
-26. 27. //Agrupando as variáveis em um texto
-
-28. echo 'Olá meu nome é ' . \$nome . ' ' . \$sobrenome . '. &lt;br
-    /&gt;';
-
-29. echo 'Tenho ' . \$idade . ' anos e minha altura é ' . \$altura .
-    'm&lt;br /&gt;&lt;hr /&gt;';
-
-30. 31. //Constantes
-
-32. define('SO', 'GNU/Linux Ubuntu'); //definindo uma constante
-
-33. define('FERRAMENTAS\_ESCRITORIO', 'LibreOffice');
-
-34. 35. echo 'Eu uso ' . SO . ' com ' . FERRAMENTAS\_ESCRITORIO;
-
-36. echo '&lt;br /&gt; O Valor de PI é: ' . M\_PI //Constante Interna do
-    PHP
-
-37. ?&gt;
-
-38. &lt;/body&gt;
-
-39. &lt;/html&gt;
+    ?>
+    </body>
+</html>
+```
 
 Salve o arquivo e atualize o browser para ver o resultado.
 
