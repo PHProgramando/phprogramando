@@ -28,7 +28,7 @@ realização da operação.
 
 Só há um operador exclusivo para strings (ponto):
 
-  .   Concatenação
+  - \.   Concatenação
 
 ### De atribuição
 
@@ -38,13 +38,13 @@ atribuição, a operação é feita entre os dois operandos, sendo atribuído
 o resultado para o primeiro. A atribuição é sempre por valor, e não por
 referência.
 
-  =     Atribuição simples
-  +=    Atribuição com adição
-  -=    Atribuição com subtração
-  \*=   Atribuição com multiplicação
-  /=    Atribuição com divisão
-  %=    Atribuição com módulo
-  .=    Atribuição com concatenação
+  - \=     Atribuição simples
+  - \+=    Atribuição com adição
+  - \-=    Atribuição com subtração
+  - \*=   Atribuição com multiplicação
+  - \/=    Atribuição com divisão
+  - \%=    Atribuição com módulo
+  - \.=    Atribuição com concatenação
 
 ### 
 
@@ -52,35 +52,35 @@ referência.
 
 Comparam dois números bit a bit.
 
-  &          “e” lógico
-  |          “ou” lógico (pipe)
-  \^         “ou” exclusivo
-  \~         Não (inversão)
-  &lt;&lt;   shift left
-  &gt;&gt;   shift right
+  - \&          “e” lógico
+  - \|          “ou” lógico (pipe)
+  - \^         “ou” exclusivo
+  - \~         Não (inversão)
+  - &lt;&lt;   shift left
+  - &gt;&gt;   shift right
 
 ### Lógico
 
 Utilizados para inteiros representando valores booleanos.
 
-  and   “e” lógico
-  or    “ou” lógico (pipe)
-  xor   “ou” exclusivo
-  !     Não (inversão)
-  &&    “e” lógico
-  ||    “ou” lógico (pipe pipe)
+  - and   “e” lógico
+  - or    “ou” lógico (pipe)
+  - xor   “ou” exclusivo
+  - !     Não (inversão)
+  - &&    “e” lógico
+  - ||    “ou” lógico (pipe pipe)
 
 ### Comparação
 
 As comparações são feitas entre os valores contidos nas variáveis, e não
 as referências. Sempre retornam um valor booleano.
 
-  ==      Igual a
-  !       Diferente
-  &lt;    Menor que
-  &gt;    Maior que
-  &lt;=   Menor ou igual a
-  &gt;=   Maior ou igual a
+  - ==      Igual a
+  - !       Diferente
+  - &lt;    Menor que
+  - &gt;    Maior que
+  - &lt;=   Menor ou igual a
+  - &gt;=   Maior ou igual a
 
 ### Expressão condicional ou ternária
 
@@ -88,7 +88,7 @@ Existe um operador de seleção que é ternário. O interpretador PHP avalia
 a primeira expressão. Se ela for verdadeira, a expressão retorna o valor
 de expressão2. Senão, retorna o valor de expressão3.
 
-<?php ( expressao1 ) ? ( expressao2 ) : ( expressao3 );
+`<?php ( expressao1 ) ? ( expressao2 ) : ( expressao3 );`
 
 ### 
 
@@ -99,8 +99,8 @@ utilizado antes, retorna o valor da variável antes de incrementá-la ou
 decrementá-la. Quando utilizado depois, retorna o valor da variável já
 incrementado ou decrementado.
 
-  ++   Incremento
-  --   Decremento
+  - \++   Incremento
+  - \--   Decremento
 
 ### Ordem de precedências dos operadores
 
