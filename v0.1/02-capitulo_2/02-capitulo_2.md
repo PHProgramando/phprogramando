@@ -18,11 +18,11 @@ Só podem ser utilizados quando os operandos são números (integer ou
 float). Se forem de outro tipo, terão seus valores convertidos antes da
 realização da operação.
 
-  +    Adição
-  -    Subtração
-  \*   Multiplicação
-  /    Divisão
-  %    Módulo (resto da divisão)
+  - \+    Adição
+  - \-    Subtração
+  - \*   Multiplicação
+  - \/    Divisão
+  - \%    Módulo (resto da divisão)
 
 ### De strings
 
