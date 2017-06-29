@@ -113,7 +113,7 @@ incrementado ou decrementado.
   5           |  Direita        |   print
   6           |  Esquerda       |   =, +=, -=, *=, =, .=, %=, &=, !=, ~=, &lt;&lt;= e &gt;&gt;=
   7           |  Esquerda       |   ? e :
-  8           |  Esquerda       |   ||
+  8           |  Esquerda       |   \||
   9           |  Esquerda       |   &&
   10          |  Esquerda       |   \|
   11          |  Esquerda       |   &
