@@ -20,6 +20,7 @@ Crie um diretório chamado */home/seu\_usuario/www/Cap3/*.
 
 #### If
 
+```
 ...
 <h1>If</h1>
 
@@ -32,6 +33,7 @@ Crie um diretório chamado */home/seu\_usuario/www/Cap3/*.
     }
 ?>
 ...
+```
 
 Salve em */home/seu\_usuario/www/PHPBasico/Cap3/condicional1.php*, no
 browser digite
