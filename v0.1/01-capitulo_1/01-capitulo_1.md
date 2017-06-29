@@ -163,26 +163,24 @@ casos perceberá que esses códigos são bem simples e não contém regras de
 negócios ou estruturas muito complexas, ou seja, se limita somente a
 exibição de dados, estruturas de laços e condições simples.
 
-Para estruturas complexas e longas usa-se *&lt;?php algum código;
-?&gt;*, para exibir conteúdo na tela utilizar *&lt;?= \$variavel;
-?&gt;*.
+Para estruturas complexas e longas usa-se <?php algum código;
+?>*, para exibir conteúdo na tela utilizar <?= \$variavel;
+?>.
 
 **ATENÇÃO:** Em códigos legados e/ou em código cujo a versão do PHP seja
 inferior a 5.4.x ou que não seguem as recomendações de padronização é
 comum encontrar a sintaxe sendo usada da seguinte forma:
 
   ---------------------------------------------------------------------------
-  &lt;? comandos ?&gt;              Não recomendado
+  <? comandos ?>              Não recomendado
   --------------------------------- -----------------------------------------
-  &lt;script language=“php”&gt;     Não recomendado
-                                    
-  comandos                          
-                                    
-  &lt;/script&gt;                   
+  <script language=“php”>     Não recomendado
+  comandos                     
+  </script>                   
 
-  &lt;% comandos %&gt;              Não recomendado
+  <% comandos %>              Não recomendado
 
-  &lt;?php echo \$variavel; ?&gt;   Ainda utilizado, mas não é recomendado.
+  <?php echo \$variavel; ?>   Ainda utilizado, mas não é recomendado.
   ---------------------------------------------------------------------------
 
 É altamente recomendado o não fechamento da tag PHP e deixar uma linha
@@ -329,7 +327,6 @@ contexto.
     
     <body>
     <?php
-
     echo '<h1>Exemplo 2</h2>
 
     <h2>Arrays Simples</h2>';
@@ -360,7 +357,6 @@ contexto.
     echo '</pre>';
 
     echo 'Exibindo um elemento do array $marcaCarro ' . $marcaCarro[0] . '<br />';
-
     ?>
     </body>
 </html>
@@ -370,243 +366,145 @@ contexto.
 */home/seu\_usuario/www/PHPBasico/Cap1/exemplo2.php*, no browser digite
 [*http://localhost/*](http://localhost/PHPBasico/Cap1/exemplo2.php)[*PHPBasico*](http://localhost/PHPBasico/Cap1/exemplo2.php)[*/*](http://localhost/PHPBasico/Cap1/exemplo2.php)[*Cap1*](http://localhost/PHPBasico/Cap1/exemplo2.php)[*/exemplo*](http://localhost/PHPBasico/Cap1/exemplo2.php)[*2*](http://localhost/PHPBasico/Cap1/exemplo2.php)[*.php*](http://localhost/PHPBasico/Cap1/exemplo2.php).
 
-1.  &lt;!DOCTYPE html&gt;
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Básico - PHP do Jeito Certo</title>
+    </head>
+    
+    <body>
+    <?php
+    echo '<h1>Exemplo 3</h2>
 
-2.  &lt;html&gt;
+    <h2>Arrays Matriz</h2>';
 
-3.  &lt;head&gt;
+    $compras = array(
+        'semana1' => array(
+            'item1' => array(
+                'produto' => 'Maça',
+                'valor' => 5.87,
+                'peso' => '1kg',
+            ),
+            'item2' => array(
+                'produto' => 'Feijão',
+                'valor' => 3.77,
+                'peso' => '1kg',
+            ),
+        ),
+        'semana2' => array(
+            'item1' => array(
+                'produto' => 'Arroz',
+                'valor' => 7.27,
+                'peso' => '5kg',
+             ),
+             'item2' => array(
+                'produto' => 'Feijão',
+                'valor' => 3.77,
+                'peso' => '1kg',
+             ),
+             'item3' => array(
+                'produto' => 'Farinha',
+                'valor' => 2.01,
+                'peso' => '1kg',
+             ),
+        ),
+    );
 
-4.  &lt;meta charset="UTF-8"&gt;
+    //Exibindo todos os elementos do Array
+    echo '<pre>';
+    print_r($compras);
+    echo '</pre>';
 
-5.  &lt;title&gt;Curso Básico - PHP do Jeito Certo&lt;/title&gt;
+    //exibindo semana1
+    echo '<pre>';
+    print_r($compras['semana1']);
+    echo '</pre>';
 
-6.  &lt;/head&gt;
+    //exibindo semana1 e o item2
+    echo '<pre>';
+    print_r($compras['semana1']['item2']);
+    echo '</pre>';
 
-7.  &lt;body&gt;
-
-8.  &lt;?php
-
-9.  echo '&lt;h1&gt;Exemplo 3&lt;/h2&gt;
-
-10. &lt;h2&gt;Arrays Matriz&lt;/h2&gt;';
-
-11. 12. \$compras = array(
-
-13. 'semana1' =&gt; array(
-
-14. 'item1' =&gt; array(
-
-15. 'produto' =&gt; 'Maça',
-
-16. 'valor' =&gt; 5.87,
-
-17. 'peso' =&gt; '1kg',
-
-18. ),
-
-19. 'item2' =&gt; array(
-
-20. 'produto' =&gt; 'Feijão',
-
-21. 'valor' =&gt; 3.77,
-
-22. 'peso' =&gt; '1kg',
-
-23. ),
-
-24. ),
-
-25. 'semana2' =&gt; array(
-
-26. 'item1' =&gt; array(
-
-27. 'produto' =&gt; 'Arroz',
-
-28. 'valor' =&gt; 7.27,
-
-29. 'peso' =&gt; '5kg',
-
-30. ),
-
-31. 'item2' =&gt; array(
-
-32. 'produto' =&gt; 'Feijão',
-
-33. 'valor' =&gt; 3.77,
-
-34. 'peso' =&gt; '1kg',
-
-35. ),
-
-36. 'item3' =&gt; array(
-
-37. 'produto' =&gt; 'Farinha',
-
-38. 'valor' =&gt; 2.01,
-
-39. 'peso' =&gt; '1kg',
-
-40. ),
-
-41. ),
-
-42. );
-
-43. 44. //Exibindo todos os elementos do Array
-
-45. echo '&lt;pre&gt;';
-
-46. print\_r(\$compras);
-
-47. echo '&lt;/pre&gt;';
-
-48. 49. //exibindo semana1
-
-50. echo '&lt;pre&gt;';
-
-51. print\_r(\$compras\['semana1'\]);
-
-52. echo '&lt;/pre&gt;';
-
-53. 54. //exibindo semana1 e o item2
-
-55. echo '&lt;pre&gt;';
-
-56. print\_r(\$compras\['semana1'\]\['item2'\]);
-
-57. echo '&lt;/pre&gt;';
-
-58. 59. //exibindo individualmente o produto farinha
-
-60. echo 'Hoje eu comprei ' .
-    \$compras\['semana2'\]\['item3'\]\['produto'\];
-
-61. ?&gt;
-
-62. &lt;/body&gt;
-
-63. &lt;/html&gt;
+    //exibindo individualmente o produto farinha
+    echo 'Hoje eu comprei ' . $compras['semana2']['item3']['produto'];
+    ?>
+    </body>
+</html>
+```
 
 Salve em */home/seu\_usuario/www/PHPBasico/Cap1/exemplo3.php*, no
 browser digite
 [*http://localhost/*](http://localhost/PHPBasico/Cap1/exemplo3.php)[*PHPBasico*](http://localhost/PHPBasico/Cap1/exemplo3.php)[*/*](http://localhost/PHPBasico/Cap1/exemplo3.php)[*Cap1*](http://localhost/PHPBasico/Cap1/exemplo3.php)[*/exemplo*](http://localhost/PHPBasico/Cap1/exemplo3.php)[*3*](http://localhost/PHPBasico/Cap1/exemplo3.php)[*.php*](http://localhost/PHPBasico/Cap1/exemplo3.php).
 
-1.  &lt;!DOCTYPE html&gt;
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Básico - PHP do Jeito Certo</title>
+    </head>
+    
+    <body>
+    <?php
+    echo '<h1>Exemplo 4</h2>
 
-2.  &lt;html&gt;
+    <h2>Arrays Matriz</h2>';
 
-3.  &lt;head&gt;
+    $compras = [
+        'semana1' => [
+            'item1' => [
+                'produto' => 'Maça',
+                'valor' => 5.87,
+                'peso' => '1kg',
+            ],
+            'item2' => [
+                'produto' => 'Feijão',
+                'valor' => 3.77,
+                'peso' => '1kg',
+            ],
+        ],
+        'semana2' => [
+            'item1' => [
+                'produto' => 'Arroz',
+                'valor' => 7.27,
+                'peso' => '5kg',
+            ],
+            'item2' => [
+                'produto' => 'Feijão',
+                'valor' => 3.77,
+                'peso' => '1kg',
+            ],
+            'item3' => [
+                'produto' => 'Farinha',
+                'valor' => 2.01,
+                'peso' => '1kg',
+            ],
+        ],
+    ];
 
-4.  &lt;meta charset="UTF-8"&gt;
+    //Exibindo todos os elementos do Array
+    echo '<pre>';
+    print_r($compras);
+    echo '</pre>';
 
-5.  &lt;title&gt;Curso Básico - PHP do Jeito Certo&lt;/title&gt;
+    //exibindo semana1
+    echo '<pre>';
+    print_r($compras['semana1']);
+    echo '</pre>';
 
-6.  &lt;/head&gt;
+    //exibindo semana1 e o item2
+    echo '<pre>';
+    print_r($compras['semana1']['item2']);
+    echo '</pre>';
 
-7.  &lt;body&gt;
-
-8.  &lt;?php
-
-9.  echo '&lt;h1&gt;Exemplo 4&lt;/h2&gt;
-
-10. &lt;h2&gt;Arrays Matriz&lt;/h2&gt;';
-
-11. 12. \$compras = \[
-
-13. 'semana1' =&gt; \[
-
-14. 'item1' =&gt; \[
-
-15. 'produto' =&gt; 'Maça',
-
-16. 'valor' =&gt; 5.87,
-
-17. 'peso' =&gt; '1kg',
-
-18. \],
-
-19. 'item2' =&gt; \[
-
-20. 'produto' =&gt; 'Feijão',
-
-21. 'valor' =&gt; 3.77,
-
-22. 'peso' =&gt; '1kg',
-
-23. \],
-
-24. \],
-
-25. 'semana2' =&gt; \[
-
-26. 'item1' =&gt; \[
-
-27. 'produto' =&gt; 'Arroz',
-
-28. 'valor' =&gt; 7.27,
-
-29. 'peso' =&gt; '5kg',
-
-30. \],
-
-31. 'item2' =&gt; \[
-
-32. 'produto' =&gt; 'Feijão',
-
-33. 'valor' =&gt; 3.77,
-
-34. 'peso' =&gt; '1kg',
-
-35. \],
-
-36. 'item3' =&gt; \[
-
-37. 'produto' =&gt; 'Farinha',
-
-38. 'valor' =&gt; 2.01,
-
-39. 'peso' =&gt; '1kg',
-
-40. \],
-
-41. \],
-
-42. \];
-
-43. 44. //Exibindo todos os elementos do Array
-
-45. echo '&lt;pre&gt;';
-
-46. print\_r(\$compras);
-
-47. echo '&lt;/pre&gt;';
-
-48. 49. //exibindo semana1
-
-50. echo '&lt;pre&gt;';
-
-51. print\_r(\$compras\['semana1'\]);
-
-52. echo '&lt;/pre&gt;';
-
-53. 54. //exibindo semana1 e o item2
-
-55. echo '&lt;pre&gt;';
-
-56. print\_r(\$compras\['semana1'\]\['item2'\]);
-
-57. echo '&lt;/pre&gt;';
-
-58. 59. //exibindo individualmente o produto farinha
-
-60. echo 'Hoje eu comprei ' .
-    \$compras\['semana2'\]\['item3'\]\['produto'\];
-
-61. ?&gt;
-
-62. &lt;/body&gt;
-
-63. &lt;/html&gt;
+    //exibindo individualmente o produto farinha
+    echo 'Hoje eu comprei ' . $compras['semana2']['item3']['produto'];
+    ?>
+    </body>
+</html>
+```
 
 Salve em */home/seu\_usuario/www/PHPBasico/Cap1/exemplo4.php*, no
 browser digite
