@@ -236,16 +236,16 @@ Primeiros passos com PHP
 
 Crie um diretório chamado */home/seu\_usuario/www/cap1*.
 ```
-1.  &lt;!DOCTYPE html&gt;
-2.  &lt;html&gt;
-3.  &lt;head&gt;
-4.  &lt;meta charset="UTF-8"&gt;
-5.  &lt;title&gt;Curso PHP Básico do Jeito Certo&lt;/title&gt;
-6.  &lt;/head&gt;
-7.  &lt;body&gt;
-8.  &lt;?= "Bem-vindo ao PHP"; ?&gt;
-9.  &lt;/body&gt;
-10. &lt;/html&gt;
+<!DOCTYPE html>
+   <html>
+       <head>
+           <meta charset="UTF-8">
+           <title>Curso PHP Básico do Jeito Certo</title>
+       </head>
+    <body>
+        <?= "Bem-vindo ao PHP"; ?>
+    </body>
+</html>
 ```
 Salve em */home/seu\_usuario/www/PHPBasico/Cap1/exemplo1.php*, no
 browser digite
