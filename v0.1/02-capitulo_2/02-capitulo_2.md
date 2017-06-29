@@ -104,28 +104,29 @@ incrementado ou decrementado.
 
 ### Ordem de precedências dos operadores
 
-  Precedência   Associatividade   Operadores
-  -------------
-  -             Esquerda          ,
-  -             Esquerda          or
-  -             Esquerda          xor
-  -             Esquerda          and
-  -             Direita           print
-  -             Esquerda          \=, \+=, \-=, \*=, /=, \.=, \%=, \&=, \!=, \~=, &lt;&lt;= e &gt;&gt;=
-  -             Esquerda          ? e :
-  -             Esquerda          \||
-  -             Esquerda          \&&
-  -            Esquerda          \|
-  -            Esquerda          \&
-  -            Esquerda          \^
-  -            Não associa       \== e \!=
-  -            Não associa       &lt;, &lt;=, &gt; e &gt;=
-  -            Esquerda          &lt;&lt; e &gt;&gt;
-  -            Esquerda          \+, \- e \.
-  -            Esquerda          \*, \/ e \%
-  -            Direita           \!, \~, \++, \--, (int), (double), (string), (array), (object) e \@
-  -            Direita           \@
-  -            Não associa       new
+  Precedência | Associatividade | Operadores
+  ------------|-----------------|------------
+  
+  1           |  Esquerda       |   ,
+  2           |  Esquerda       |   or
+  3           |  Esquerda       |   xor
+  4           |  Esquerda       |   and
+  5           |  Direita        |   print
+  6           |  Esquerda       |   =, +=, -=, *=, =, .=, %=, &=, !=, ~=, &lt;&lt;= e &gt;&gt;=
+  7           |  Esquerda       |   ? e :
+  8           |  Esquerda       |   ||
+  9           |  Esquerda       |   &&
+  10          |  Esquerda       |   \|
+  11          |  Esquerda       |   &
+  12          |  Esquerda       |   \^
+  13          |  Não associa    |   == e !=
+  14          |  Não associa    |   &lt;, &lt;=, &gt; e &gt;=
+  15          |  Esquerda       |   &lt;&lt; e &gt;&gt;
+  16          |  Esquerda       |   +, \- e .
+  17          |  Esquerda       |   *, \/ e %
+  18          |  Direita        |   !, \~, ++, --, (int), (double), (string), (array), (object) e @
+  19          |  Direita        |   @
+  20          |  Não associa    |   new
 
 Resumo do Capítulo
 ------------------
