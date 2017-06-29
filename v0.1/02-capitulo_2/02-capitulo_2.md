@@ -105,8 +105,7 @@ incrementado ou decrementado.
 ### Ordem de precedências dos operadores
 
   Precedência | Associatividade | Operadores
-  ------------|-----------------|------------
-  
+  ------------|-----------------|------------  
   1           |  Esquerda       |   ,
   2           |  Esquerda       |   or
   3           |  Esquerda       |   xor
