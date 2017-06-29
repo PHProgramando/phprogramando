@@ -256,8 +256,8 @@ TAGs HTML 5. Iremos agora modificar o arquivo criado acima e implementar
 os conceitos aprendidos nos tópicos já aprendidos.
 
 **Nota:** Nos arquivos PHP que forem usados para exibição do HTML como
-no exemplo acima é recomendado o uso da tag, `&lt;`?= ?`&gt;` ao invés da
-tag `&lt;`?php echo ?`&gt`;
+no exemplo acima é recomendado o uso da tag, `<`?= ?`>` ao invés da
+tag `<`?php echo ?`>`;
 
 ```
 <!DOCTYPE html>
@@ -319,72 +319,52 @@ qualquer linguagem. Com ele podemos agrupar várias informações em uma
 única variável. Também muito útil para agrupar valores de um mesmo
 contexto.
 
-1.  &lt;!DOCTYPE html&gt;
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Básico - PHP do Jeito Certo</title>
+    </head>
+    
+    <body>
+    <?php
 
-2.  &lt;html&gt;
+    echo '<h1>Exemplo 2</h2>
 
-3.  &lt;head&gt;
+    <h2>Arrays Simples</h2>';
 
-4.  &lt;meta charset="UTF-8"&gt;
+    //Array simples com indice automático
+    $frutas = array('Goiaba', 'Jaca', 'Uva', 'Cacau');
 
-5.  &lt;title&gt;Curso Básico - PHP do Jeito Certo&lt;/title&gt;
+    echo '<pre>';
+    print_r($frutas);
+    echo '</pre>';
 
-6.  &lt;/head&gt;
+    //Array simples com indice manual
+    $frutas = array(3 => 'Goiaba', 6 => 'Jaca', 1 => 'Uva', 4 => 'Cacau');
 
-7.  &lt;body&gt;
+    echo '<pre>';
+    print_r($frutas);
+    echo '</pre>';
 
-8.  &lt;?php
+    echo 'Exibindo um elemento do array $frutas ' . $frutas[6] . '<br />';
 
-9.  echo '&lt;h1&gt;Exemplo 2&lt;/h2&gt;
+    //Outra forma de se montar um array
+    $marcaCarro[0] = 'BMW';
+    $marcaCarro[1] = 'Mercedes';
+    $marcaCarro[2] = 'Porche';
 
-10. &lt;h2&gt;Arrays Simples&lt;/h2&gt;';
+    echo '<pre>';
+    print_r($marcaCarro);
+    echo '</pre>';
 
-11. 12. //Array simples com indice automático
+    echo 'Exibindo um elemento do array $marcaCarro ' . $marcaCarro[0] . '<br />';
 
-13. \$frutas = array('Goiaba', 'Jaca', 'Uva', 'Cacau');
-
-14. echo '&lt;pre&gt;';
-
-15. print\_r(\$frutas);
-
-16. echo '&lt;/pre&gt;';
-
-17. //Array simples com indice manual
-
-18. \$frutas = array(3 =&gt; 'Goiaba', 6 =&gt; 'Jaca', 1 =&gt; 'Uva', 4
-    =&gt; 'Cacau');
-
-19. echo '&lt;pre&gt;';
-
-20. print\_r(\$frutas);
-
-21. echo '&lt;/pre&gt;';
-
-22. echo 'Exibindo um elemento do array \$frutas ' . \$frutas\[6\] .
-    '&lt;br /&gt;';
-
-23. //Outra forma de se montar um array
-
-24. \$marcaCarro\[0\] = 'BMW';
-
-25. \$marcaCarro\[1\] = 'Mercedes';
-
-26. \$marcaCarro\[2\] = 'Porche';
-
-27. echo '&lt;pre&gt;';
-
-28. print\_r(\$marcaCarro);
-
-29. echo '&lt;/pre&gt;';
-
-30. echo 'Exibindo um elemento do array \$marcaCarro ' .
-    \$marcaCarro\[0\] . '&lt;br /&gt;';
-
-31. ?&gt;
-
-32. &lt;/body&gt;
-
-33. &lt;/html&gt;
+    ?>
+    </body>
+</html>
+```
 
 <span id="__DdeLink__1832_1532099292" class="anchor"></span>Salve em
 */home/seu\_usuario/www/PHPBasico/Cap1/exemplo2.php*, no browser digite
