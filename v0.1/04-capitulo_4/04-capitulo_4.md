@@ -18,33 +18,28 @@ um valor mesmo que nulo. Vamos aos exemplos.
 
 ### Função sem argumentos
 
-1.  ...
+```
+...
 
-2.  &lt;h1&gt;Função sem argumento&lt;/h1&gt;
+<h1>Função sem argumento</h1>
 
-3.  &lt;?php
+<?php
 
-4.  //declaração da função
+//declaração da função
+function soma()
+{
+    $valor1 = 20;
+    $valor2 = 30;
 
-5.  function soma()
+    echo $valor1 + $valor2;
+}
 
-6.  {
+//chamando a função a ser executada
+soma();
 
-7.  \$valor1 = 20;
-
-8.  \$valor2 = 30;
-
-9.  echo \$valor1 + \$valor2;
-
-10. }
-
-11. 12. //chamando a função a ser executada
-
-13. soma();
-
-14. ?&gt;
-
-15. ...
+?>
+...
+```
 
 Salve em */home/seu\_usuario/www/PHPBasico/Cap4/funcao1.php*, no browser
 digite
@@ -57,83 +52,72 @@ função.
 
 ### Função sem argumentos com variável fora do escopo
 
-1.  ...
+```
+...
 
-2.  &lt;h1&gt;Função sem argumento com variável fora do
-    escopo&lt;/h1&gt;
+<h1>Função sem argumento com variável fora do
+    escopo</h1>
 
-3.  &lt;?php
+<?php
+$valor1 = 100;
 
-4.  \$valor1 = 100;
+//declaração da função
+function soma()
+{
+    $valor1 = 20;
+    $valor2 = 30;
 
-5.  //declaração da função
+    echo $valor1 + $valor2;
 
-6.  function soma()
+}
 
-7.  {
+//chamando a função a ser executada
+soma();
 
-8.  \$valor1 = 20;
+//valor fora do escopo da função
 
-9.  \$valor2 = 30;
+echo '<br />' . $valor1;
 
-10. echo \$valor1 + \$valor2;
-
-11. }
-
-12. 13. //chamando a função a ser executada
-
-14. soma();
-
-15. //valor fora do escopo da função
-
-16. echo '&lt;br /&gt;' . \$valor1;
-
-17. ?&gt;
-
-18. ...
+?>
+...
+```
 
 Salve em */home/seu\_usuario/www/PHPBasico/Cap4/funcao2.php*, no browser
 digite
 [http://localhost/PHPBasico/Cap](http://localhost/PHPBasico/Cap4/funcao1.php)[4](http://localhost/PHPBasico/Cap4/funcao1.php)[/](http://localhost/PHPBasico/Cap4/funcao1.php)[funcao](http://localhost/PHPBasico/Cap4/funcao1.php)[2](http://localhost/PHPBasico/Cap4/funcao1.php)[.php](http://localhost/PHPBasico/Cap4/funcao1.php).
 
 **Nota:** Repare que o valor da soma continuou o mesmo. Isso porque a
-variável \$valor1 só é utilizada fora da função.
+variável $valor1 só é utilizada fora da função.
 
 ### Função sem argumento com variável global
+```
+...
 
-1.  ...
+<h1>Função sem argumento com variável global</h1>
 
-2.  &lt;h1&gt;Função sem argumento com variável global&lt;/h1&gt;
+<?php
+$valor1 = 100;
 
-3.  &lt;?php
+//declaração da função
 
-4.  \$valor1 = 100;
+function soma()
+{
+    global $valor1;
+    $valor2 = 30;
 
-5.  //declaração da função
+    echo \$valor1 + \$valor2;
 
-6.  function soma()
+}
 
-7.  {
+//chamando a função a ser executada
+soma();
 
-8.  global \$valor1;
+//valor fora do escopo da função
+ echo '<br />' . $valor1;
 
-9.  \$valor2 = 30;
-
-10. echo \$valor1 + \$valor2;
-
-11. }
-
-12. 13. //chamando a função a ser executada
-
-14. soma();
-
-15. 16. //valor fora do escopo da função
-
-17. echo '&lt;br /&gt;' . \$valor1;
-
-18. ?&gt;
-
-19. ...
+?>
+...
+```
 
 Salve em */home/seu\_usuario/www/PHPBasico/Cap4/funcao3.php*, no browser
 digite
@@ -143,81 +127,69 @@ digite
 \$valor1 foi precedida da palavra-chave “global” dentro da função.
 
 ### Função com argumento
+```
+...
 
-1.  ...
+<h1>Função com argumento</h1>
 
-2.  &lt;h1&gt;Função com argumento&lt;/h1&gt;
+<?php
 
-3.  &lt;?php
+//declaração da função
+function exibeNome($nome)
+{
+    $texto = 'O nome escolhido foi: ' . $nome;
 
-4.  //declaração da função
+    return $texto;
+}
 
-5.  function exibeNome(\$nome)
+$nome = 'Juraci José';
 
-6.  {
+//chamando a função a ser executada
+echo exibeNome($nome);
 
-7.  \$texto = 'O nome escolhido foi: ' . \$nome;
-
-8.  return \$texto;
-
-9.  }
-
-10. 11. \$nome = 'Juraci José';
-
-12. //chamando a função a ser executada
-
-13. echo exibeNome(\$nome);
-
-14. ?&gt;
-
-15. ...
+?>
+...
+```
 
 Salve em */home/seu\_usuario/www/PHPBasico/Cap4/funcao4.php*, no browser
 digite
 [http://localhost/PHPBasico/Cap](http://localhost/PHPBasico/Cap4/funcao4.php)[4](http://localhost/PHPBasico/Cap4/funcao4.php)[/](http://localhost/PHPBasico/Cap4/funcao4.php)[funcao](http://localhost/PHPBasico/Cap4/funcao4.php)[4](http://localhost/PHPBasico/Cap4/funcao4.php)[.php](http://localhost/PHPBasico/Cap4/funcao4.php).
 
 **Nota:** Observe que nesse exemplo eu passei um argumento para a função
-chamada \$nome, com isso posso alterar livremente a variável nome sem
+chamada $nome, com isso posso alterar livremente a variável nome sem
 ter que mudar a função.
 
 ### Função com dois argumentos ou mais
+```
+...
+<h1>Função com dos argumentos ou mais</h1>
 
-1.  ...
+<?php
 
-2.  &lt;h1&gt;Função com dos argumentos ou mais&lt;/h1&gt;
-
-3.  &lt;?php
-
-4.  //declaração da função
-
-5.  function exibeNomeIdade(\$nome, \$idade = 100)
-
-6.  {
-
-7.  \$texto = 'O nome escolhido foi: ' . \$nome . ' tenho ' . \$idade .
+//declaração da função
+function exibeNomeIdade($nome, $idade = 100)
+{
+    $texto = 'O nome escolhido foi: ' . $nome . ' tenho ' . $idade .
     ' anos.';
 
-8.  return \$texto;
+    return \$texto;
+}
 
-9.  }
+$nome = 'Juraci José';
+$idade = 27;
 
-10. 11. \$nome = 'Juraci José';
+//chamando a função a ser executada
+echo exibeNomeIdade($nome, $idade);
 
-12. \$idade = 27;
-
-13. //chamando a função a ser executada
-
-14. echo exibeNomeIdade(\$nome, \$idade);
-
-15. ?&gt;
-
-16. ...
+?>
+...
+```
 
 Salve em */home/seu\_usuario/www/PHPBasico/Cap4/funcao5.php*, no browser
 digite
 [http://localhost/PHPBasico/Cap](http://localhost/PHPBasico/Cap4/funcao5.php)[4](http://localhost/PHPBasico/Cap4/funcao5.php)[/](http://localhost/PHPBasico/Cap4/funcao5.php)[funcao](http://localhost/PHPBasico/Cap4/funcao5.php)[5.](http://localhost/PHPBasico/Cap4/funcao5.php)[php](http://localhost/PHPBasico/Cap4/funcao5.php).
 
-**Nota:** Nesse exemplo passamos 2 parâmetros, note que **\$idade** está
+**Nota:** Nesse exemplo passamos 2 parâmetros, note que **$idade** está
 declarado com o valor 100, isso indica que o parâmetro tem um valor
 padrão e também quer dizer que pode ser omitido na chamada da função.
 
