@@ -55,8 +55,8 @@ digite
     $subject = "Testando";
     $message = "Isso é um teste de envio";
 
-    $headers = 'From: webmaster@site.com.br' . "\\r\\n" .
-    'Reply-To: webmaster@site.com.br' . "\\r\\n" .
+    $headers = 'From: webmaster@site.com.br' . "\r\n" .
+    'Reply-To: webmaster@site.com.br' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
     mail($to, $subject, $message, $headers);
@@ -84,16 +84,16 @@ digite
     <p>Pode incluir qualquer tag HTML e CSS também</p>
     ";
 
-    $headers = 'MIME-Version: 1.0' . "\\r\\n";
-    $headers .= 'Content-type:text/html;charset=UTF-8' . "\\r\\n";
+    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type:text/html;charset=UTF-8' . "\r\n";
     $headers .= 'From: webmaster <webmaster@site.com.br>, alguém
-    <alguem@site.com.br' . "\\r\\n";
+    <alguem@site.com.br' . "\r\n";
     $headers .= 'Reply-To: webmaster <webmaster@site.com.br>' .
-    "\\r\\n";
+    "\r\n";
     $headers .= 'Cc: outromail@site.com.br, maisum@site.com.br' .
-    "\\r\\n";
+    "\r\n";
     $headers .= 'Bcc: outromail@site.com.br, maisum@site.com.br' .
-    "\\r\\n";
+    "\r\n";
     $headers .= 'X-Mailer: PHP' . phpversion();
 
     mail($to, $subject, $message, $headers);
@@ -121,16 +121,16 @@ digite
     <p>Pode incluir qualquer tag HTML e CSS também</p>
     ";
 
-    $headers = 'MIME-Version: 1.0' . "\\r\\n";
-    $headers .= 'Content-type:text/html;charset=UTF-8' . "\\r\\n";
+    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type:text/html;charset=UTF-8' . "\r\n";
     $headers .= 'From: webmaster <webmaster@site.com.br>, alguém
-    <alguem@site.com.br' . "\\r\\n";
+    <alguem@site.com.br' . "\r\n";
     $headers .= 'Reply-To: webmaster <webmaster@site.com.br>' .
-    "\\r\\n";
+    "\r\n";
     $headers .= 'Cc: outromail@site.com.br, maisum@site.com.br' .
-    "\\r\\n";
+    "\r\n";
     $headers .= 'Bcc: outromail@site.com.br, maisum@site.com.br' .
-    "\\r\\n";
+    "\r\n";
     $headers .= 'X-Mailer: PHP' . phpversion();
 
     if (mail($to, $subject, $message, $headers)) {
