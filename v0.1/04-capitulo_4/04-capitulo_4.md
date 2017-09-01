@@ -68,7 +68,6 @@ function soma()
     $valor2 = 30;
 
     echo $valor1 + $valor2;
-
 }
 
 //chamando a função a ser executada
@@ -106,7 +105,6 @@ function soma()
     $valor2 = 30;
 
     echo \$valor1 + \$valor2;
-
 }
 
 //chamando a função a ser executada
