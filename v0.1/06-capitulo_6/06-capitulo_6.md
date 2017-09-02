@@ -1,4 +1,3 @@
-
 Capítulo 6
 ==========
 
@@ -12,163 +11,129 @@ Recuperando dados de Formulários
 Para recuperar dados vindo de um fomulário é preciso saber qual tipo de
 protocolo foi informado no formulário. Para formulário do tipo
 ***post*** as informações devem ser recebidas pela variável global de
-PHP do tipo **\$\_POST\[\]** e formulário do tipo ***get*** devem ser
-recebidos pela variável global **\$\_GET\[\]**. Existe um tipo especial
-que é o \$\_REQUEST\[\], que recebe tanto o tipo *get* quanto o tipo
+PHP do tipo **$_POST[]** e formulário do tipo ***get*** devem ser
+recebidos pela variável global **$_GET[]**. Existe um tipo especial
+que é o $_REQUEST[], que recebe tanto o tipo *get* quanto o tipo
 *post*, porém seu uso deve ser muito restrito (evitado).
 
 **Nota:** Todas as vezes que sua aplicação receber dados de um
 formulário ou tiver interação com o usuário esses dados **DEVEM** ser
 tratados por meio de algumas funções do PHP.
 
-### Recuperando campos de texto via \$\_POST\[\].
+### Recuperando campos de texto via $_POST[].
+```
+...
+<h1>Formulário simples 1 (POST)</h1>
 
-1.  ..
+<form action="<?= $_SERVER['PHP_SELF'] ?>" name="frmSimples1" id="frmSimples1" method="post">
+    <input type="hidden" name="opc" value="1"> 
 
-2.  &lt;h1&gt;Formulário simples 1 (POST)&lt;/h1&gt;
+    <label>Nome:</label>
+    <input type="text" name="nome" id="nome" maxlength="150"
+    size="50">
 
-3.  4.  &lt;form action="&lt;?= \$\_SERVER\['PHP\_SELF'\] ?&gt;"
+    <br />
+    <label>E-mail:</label>
+    <input type="text" name="email" id="email" maxlength="150"
+    size="50">
 
-5.  name="frmSimples1" id="frmSimples1" method="post"&gt;
+    <br /><br />
+    <input type="submit" name="enviar">
+</form>
 
-6.  &lt;input type="hidden" name="opc" value="1"&gt;
+<?php
+    if (isset($_POST['opc']) == '1') :
 
-7.  8.  &lt;label&gt;Nome:&lt;/label&gt;
+        echo '<h2>Recuperando campos de texto do tipo post</h2>';
 
-9.  &lt;input type="text" name="nome" id="nome" maxlength="150"
-    size="50"&gt;
+        echo 'Nome: ' . $_POST['nome'];
+        echo '<br />E-mail: ' . $_POST['email'];
+    endif;
+?>
+...
+```
 
-10. 11. &lt;br /&gt;
-
-12. &lt;label&gt;E-mail:&lt;/label&gt;
-
-13. &lt;input type="text" name="email" id="email" maxlength="150"
-    size="50"&gt;
-
-14. 15. &lt;br /&gt;&lt;br /&gt;
-
-16. &lt;input type="submit" name="enviar"&gt;
-
-17. &lt;/form&gt;
-
-18. 19. &lt;?php
-
-20. if (isset(\$\_POST\['opc'\]) == '1') :
-
-21. echo '&lt;h2&gt;Recuperando campos de texto do tipo
-    post&lt;/h2&gt;';
-
-22. 23. echo 'Nome: ' . \$\_POST\['nome'\];
-
-24. echo '&lt;br /&gt;E-mail: ' . \$\_POST\['email'\];
-
-25. endif;
-
-26. ?&gt;
-
-27. ...
-
-Salve em */home/seu\_usuario/www/PHPBasico/Cap6/formSimples1.php*, no
+Salve em */home/seu_usuario/www/PHPBasico/Cap6/formSimples1.php*, no
 browser digite <http://localhost/PHPBasico/Cap6/formSimples1.php>.
 
 **Nota:** Todos os campos são recuperados da mesma forma, porém campos
 do tipo checkbox tem um comportamento um pouco diferente dos outros.
 
-### Recuperando campos de texto via \$\_GET\[\].
+### Recuperando campos de texto via $_GET[].
 
 Salve o arquivo anterior como *formSimples2.php* e altere o ***method***
-do formulário para o tipo **get** e substitua ***\$\_POST*** por
-***\$\_GET***. Digite no browser
+do formulário para o tipo **get** e substitua ***$_POST*** por
+***$_GET***. Digite no browser
 [http://localhost/PHPBasico/Cap6/formSimples](http://localhost/PHPBasico/Cap6/formSimples1.php)[2](http://localhost/PHPBasico/Cap6/formSimples1.php)[.php](http://localhost/PHPBasico/Cap6/formSimples1.php).
 
 **Nota:** Uma atenção especial deve ser dada ao se recuperar pelo método
 get, esse protocolo só aceita 255 caracteres.
 
 **Obs:** links em modo geral são recuperados também com o
-**\$\_GET\[\]**.
+**$_GET[]**.
 
 ### Recuperando campos do tipo checkbox e radiobutton.
+```
+...
+<h1>Formulário simples 3</h1>
 
-1.  ...
+<form action="<?= $_SERVER['PHP_SELF'] ?>" name="frmSimples3" id="frmSimples3" method="post">
+    <input type="hidden" name="opc" value="1">
 
-2.  &lt;h1&gt;Formulário simples 3&lt;/h1&gt;
+    <label>Qual seu nível de conhecimento em PHP?<br
+    /></label>
+    <input type="radio" name='conhecimento' value='Não sei PHP'>
+    Não sei PHP <br />
 
-3.  4.  &lt;form action="&lt;?= \$\_SERVER\['PHP\_SELF'\] ?&gt;"
+    <input type="radio" name='conhecimento' value='PHP Básico'>
+    PHP Básico <br />
 
-5.  name="frmSimples3" id="frmSimples3" method="post"&gt;
+    <input type="radio" name='conhecimento' value='PHP
+    Intermediário'> PHP Intermediário <br />
 
-6.  &lt;input type="hidden" name="opc" value="1"&gt;
+    <input type="radio" name='conhecimento' value='PHP Avançado'>
+    PHP Avançado <br />
 
-7.  8.  &lt;label&gt;Qual seu nível de conhecimento em PHP?&lt;br
-    /&gt;&lt;/label&gt;
+    <input type="radio" name='conhecimento' value='Jedi'> Jedi
+    <br /><br />
 
-9.  &lt;input type="radio" name='conhecimento' value='Não sei PHP'&gt;
-    Não sei PHP &lt;br /&gt;
+    <label>Quais versão do PHP já utilizou?<br /></label>
+    <input type="checkbox" name='versao[]' value='3.x'> 3.x
+    <br />
 
-10. &lt;input type="radio" name='conhecimento' value='PHP Básico'&gt;
-    PHP Básico &lt;br /&gt;
+    <input type="checkbox" name='versao[]' value='4.x'> 4.x
+    <br />
 
-11. &lt;input type="radio" name='conhecimento' value='PHP
-    Intermediário'&gt; PHP Intermediário &lt;br /&gt;
+    <input type="checkbox" name='versao[]' value='5.0'> 5.0
+    <br />
 
-12. &lt;input type="radio" name='conhecimento' value='PHP Avançado'&gt;
-    PHP Avançado &lt;br /&gt;
+    <input type="checkbox" name='versao[]' value='5.3'> 5.3
+    <br />
 
-13. &lt;input type="radio" name='conhecimento' value='Jedi'&gt; Jedi
-    &lt;br /&gt;
+    <input type="checkbox" name='versao[]' value='5.5'> 5.5
+    <br /><br /><br />
 
-14. 15. &lt;br /&gt;
+    <input type="submit" name="enviar">
 
-16. &lt;label&gt;Quais versão do PHP já utilizou?&lt;br
-    /&gt;&lt;/label&gt;
+</form>
 
-17. &lt;input type="checkbox" name='versao\[\]' value='3.x'&gt; 3.x
-    &lt;br /&gt;
+<?php
 
-18. &lt;input type="checkbox" name='versao\[\]' value='4.x'&gt; 4.x
-    &lt;br /&gt;
+if (isset($_POST['opc']) == '1') :
+    echo '<h2>Recuperando campos Checkbox e Radiobutton</h2>';
 
-19. &lt;input type="checkbox" name='versao\[\]' value='5.0'&gt; 5.0
-    &lt;br /&gt;
+    echo 'Qual seu nível de conhecimento em PHP?<br />';
+    echo 'R: ' . $_POST['conhecimento'] . '<br /><br />';
+    echo 'Quais versão do PHP já utilizou?<br />';
+    echo 'R: ' . $_POST['versao'][0] . '<br />'; //recupera o primeiro item selecionado
 
-20. &lt;input type="checkbox" name='versao\[\]' value='5.3'&gt; 5.3
-    &lt;br /&gt;
+    var_dump($_POST['versao']); //Recupera todos os itens marcados
+endif;
+?>
+...
+```
 
-21. &lt;input type="checkbox" name='versao\[\]' value='5.5'&gt; 5.5
-    &lt;br /&gt;
-
-22. 23. &lt;br /&gt;&lt;br /&gt;
-
-24. &lt;input type="submit" name="enviar"&gt;
-
-25. &lt;/form&gt;
-
-26. 27. &lt;?php
-
-28. if (isset(\$\_POST\['opc'\]) == '1') :
-
-29. echo '&lt;h2&gt;Recuperando campos Checkbox e
-    Radiobutton&lt;/h2&gt;';
-
-30. 31. echo 'Qual seu nível de conhecimento em PHP?&lt;br /&gt;';
-
-32. echo 'R: ' . \$\_POST\['conhecimento'\] . '&lt;br /&gt;&lt;br
-    /&gt;';
-
-33. 34. echo 'Quais versão do PHP já utilizou?&lt;br /&gt;';
-
-35. echo 'R: ' . \$\_POST\['versao'\]\[0\] . '&lt;br /&gt;'; //recupera
-    o primeiro item selecionado
-
-36. var\_dump(\$\_POST\['versao'\]); //Recupera todos os itens marcados
-
-37. endif;
-
-38. ?&gt;
-
-39. ...
-
-*Salve em /home/seu\_usuario/www/PHPBasico/Cap6/formSimples3.php, no
+*Salve em /home/seu_usuario/www/PHPBasico/Cap6/formSimples3.php, no
 browser digite*
 [*http://localhost/PHPBasico/Cap6/formSimples*](http://localhost/PHPBasico/Cap6/formSimples3.php)[*3*](http://localhost/PHPBasico/Cap6/formSimples3.php)[*.php*](http://localhost/PHPBasico/Cap6/formSimples3.php)*.*
 
@@ -181,127 +146,83 @@ Abordarei aqui as principais e mais comuns funções de tratamento e
 validação. O Exercício a seguir mostrará como aplicar essas validações.
 
 ### Tratamento de formulário com trim(), addslashes(), htmlspecialchars() e htmlentities()
+```
+...
+<h1>Tratando form 1</h1>
 
-1.  ...
+<form action="<?= $_SERVER['PHP_SELF'] ?>" name="frmTrata1" id="frmTrata1" method="post">
+    <input type="hidden" name="opc" value="1">
 
-2.  &lt;h1&gt;Tratando form 1&lt;/h1&gt;
+    <label>Nome:</label>
+    <input type="text" name="nome" id="nome" maxlength="150" size="50">
 
-3.  4.  &lt;form action="&lt;?= \$\_SERVER\['PHP\_SELF'\] ?&gt;"
+    <br />
+    <label>E-mail:</label>
 
-5.  name="frmTrata1" id="frmTrata1" method="post"&gt;
+    <input type="text" name="email" id="email" maxlength="150" size="50">
 
-6.  &lt;input type="hidden" name="opc" value="1"&gt;
+    <br /><br />
+    <input type="submit" name="enviar">
+</form>
 
-7.  8.  &lt;label&gt;Nome:&lt;/label&gt;
+<?php
+    if (isset($_POST['opc']) == '1') :
+        echo '<h2>Recuperando e tratando campos de texto do tipo post</h2>';
+        Nome: ' . addslashes($_POST['nome']);
 
-9.  &lt;input type="text" name="nome" id="nome" maxlength="150"
-    size="50"&gt;
+        echo '<br /><br />Nome: ' . htmlspecialchars(trim($_POST['nome']), ENT_COMPAT); //padrão
 
-10. 11. &lt;br /&gt;
+        echo '<br />E-mail: ' . htmlspecialchars(trim($_POST['email']), ENT_QUOTES);
+        echo '<br /><br />Nome: ' . htmlentities(trim($_POST['nome']));
+        echo '<br />E-mail: ' . htmlentities(trim($_POST['email']));
+        echo '<br /><br />Nome: ' . htmlspecialchars(addslashes(trim($_POST['nome'])));
 
-12. &lt;label&gt;E-mail:&lt;/label&gt;
+        echo '<br />E-mail: ' . htmlentities(addslashes(trim($_POST['email'])));
+endif;
+?>
+...
+```
 
-13. &lt;input type="text" name="email" id="email" maxlength="150"
-    size="50"&gt;
-
-14. 15. &lt;br /&gt;&lt;br /&gt;
-
-16. &lt;input type="submit" name="enviar"&gt;
-
-17. &lt;/form&gt;
-
-18. 19. &lt;?php
-
-20. if (isset(\$\_POST\['opc'\]) == '1') :
-
-21. echo '&lt;h2&gt;Recuperando e tratando campos de texto do tipo
-    post&lt;/h2&gt;';
-
-22. echo 'Nome: ' . addslashes(\$\_POST\['nome'\]);
-
-23. echo '&lt;br /&gt;&lt;br /&gt;Nome: ' .
-    htmlspecialchars(trim(\$\_POST\['nome'\]), ENT\_COMPAT); //padrão
-
-24. echo '&lt;br /&gt;E-mail: ' .
-    htmlspecialchars(trim(\$\_POST\['email'\]), ENT\_QUOTES);
-
-25. echo '&lt;br /&gt;&lt;br /&gt;Nome: ' .
-    htmlentities(trim(\$\_POST\['nome'\]));
-
-26. echo '&lt;br /&gt;E-mail: ' .
-    htmlentities(trim(\$\_POST\['email'\]));
-
-27. echo '&lt;br /&gt;&lt;br /&gt;Nome: ' .
-    htmlspecialchars(addslashes(trim(\$\_POST\['nome'\])));
-
-28. echo '&lt;br /&gt;E-mail: ' .
-    htmlentities(addslashes(trim(\$\_POST\['email'\])));
-
-29. endif;
-
-30. ?&gt;
-
-31. ...
-
-*Salve em /home/seu\_usuario/www/PHPBasico/Cap6/tratandoForm1.php, no
+*Salve em /home/seu_usuario/www/PHPBasico/Cap6/tratandoForm1.php, no
 browser digite*
 [*http://localhost/PHPBasico/Cap6/*](http://localhost/PHPBasico/Cap6/tratandoForm1.php)[*tratandoForm1.php*](http://localhost/PHPBasico/Cap6/tratandoForm1.php)*.*
 
 ### *Tratamento de formulário com nl2br()*
+```
+...
 
-1.  ...
+<h1>Tratando form 2</h1>
 
-2.  &lt;h1&gt;Tratando form 2&lt;/h1&gt;
+<form action="<?= $_SERVER['PHP_SELF'] ?>" name="frmTrata2" id="frmTrata2" method="post">
 
-3.  4.  &lt;form action="&lt;?= \$\_SERVER\['PHP\_SELF'\] ?&gt;"
+    <label>Nome:</label>
+    <input type="text" name="nome" id="nome" maxlength="150" size="50">
 
-5.  name="frmTrata2" id="frmTrata2" method="post"&gt;
+    <br />
+    <label>E-mail:</label>
 
-6.  7.  &lt;label&gt;Nome:&lt;/label&gt;
+    <input type="text" name="email" id="email" maxlength="150" size="50">
 
-8.  &lt;input type="text" name="nome" id="nome" maxlength="150"
-    size="50"&gt;
+    <br />
+    <label>Comentário:</label>
 
-9.  10. &lt;br /&gt;
+    <textarea name="comentario" id="comentario" cols="63" rows="10"></textarea>
 
-11. &lt;label&gt;E-mail:&lt;/label&gt;
+    <br /><br />
+    <input type="submit" name="enviar">
+</form>
 
-12. &lt;input type="text" name="email" id="email" maxlength="150"
-    size="50"&gt;
+<?php
+    if ($_POST) :
+        echo '<br /><br />Nome: ' . htmlspecialchars(addslashes(trim($_POST['nome'])));
+        echo '<br />E-mail: ' . htmlentities(addslashes(trim($_POST['email'])));
+        echo '<br /><br />Nome: ' . addslashes(nl2br(trim($_POST['comentario'])));
+    endif;
+?>
+...
+```
 
-13. 14. &lt;br /&gt;
-
-15. &lt;label&gt;Comentário:&lt;/label&gt;
-
-16. &lt;textarea name="comentario" id="comentario" cols="63"
-    rows="10"&gt;&lt;/textarea&gt;
-
-17. 18. &lt;br /&gt;&lt;br /&gt;
-
-19. &lt;input type="submit" name="enviar"&gt;
-
-20. &lt;/form&gt;
-
-21. 22. &lt;?php
-
-23. if (\$\_POST) :
-
-24. echo '&lt;br /&gt;&lt;br /&gt;Nome: ' .
-    htmlspecialchars(addslashes(trim(\$\_POST\['nome'\])));
-
-25. echo '&lt;br /&gt;E-mail: ' .
-    htmlentities(addslashes(trim(\$\_POST\['email'\])));
-
-26. echo '&lt;br /&gt;&lt;br /&gt;Nome: ' .
-    addslashes(nl2br(trim(\$\_POST\['comentario'\])));
-
-27. endif;
-
-28. ?&gt;
-
-29. ...
-
-*Salve em /home/seu\_usuario/www/PHPBasico/Cap6/tratandoForm2.php, no
+*Salve em /home/seu_usuario/www/PHPBasico/Cap6/tratandoForm2.php, no
 browser digite*
 [*http://localhost/PHPBasico/Cap6/*](http://localhost/PHPBasico/Cap6/tratandoForm2.php)[*tratandoForm*](http://localhost/PHPBasico/Cap6/tratandoForm2.php)[*2*](http://localhost/PHPBasico/Cap6/tratandoForm2.php)[*.php*](http://localhost/PHPBasico/Cap6/tratandoForm2.php)*.*
 
@@ -314,208 +235,116 @@ finalidade de upload, para isso basta utilizar o atributo
 *enctype="multipart/form-data"* na tag form.
 
 ### Envio de dados com PHP e validação
-
-1.  ...
-
-2.  &lt;h1&gt;Upload de arquivo e validação&lt;/h1&gt;
-
-3.  4.  &lt;form action="&lt;?= \$\_SERVER\['PHP\_SELF'\] ?&gt;"
-
-5.  name="frmUpload" id="frmUpload" method="post"
-    enctype="multipart/form-data"&gt;
-
-6.  7.  &lt;label&gt;Selecione uma magem:&lt;br /&gt;&lt;/label&gt;
-
-8.  &lt;input type="file" name="img" id="img" accept="image/\*"&gt;
-
-9.  10. &lt;br /&gt;&lt;br /&gt;
-
-11. &lt;label&gt;Selecione um Documento:&lt;br /&gt;&lt;/label&gt;
-
-12. &lt;input type="file" name="doc" id="doc"&gt;
-
-13. 14. &lt;br /&gt;&lt;br /&gt;
-
-15. &lt;input type="submit" name="enviar"&gt;
-
-16. &lt;/form&gt;
-
-17. 18. &lt;?php
-
-19. 20. if (\$\_POST) :
-
-21. var\_dump(\$\_FILES\['img'\]);
-
-22. var\_dump(\$\_FILES\['doc'\]);
-
-23. 24. function validaNomeCampo(\$nomeCampo = null)
-
-25. {
-
-26. if (\$nomeCampo) {
-
-27. return true;
-
-28. } else {
-
-29. echo '&lt;strong&gt;Erro: O nome do campo deve ser
-    informado!&lt;/strong&gt;';
-
-30. exit;
-
-31. }
-
-32. 33. }
-
-34. 35. function verificaCampoVazio(\$nomeCampo = nul, array \$campo
-    = null)
-
-36. {
-
-37. if (\$\_FILES\[\$nomeCampo\]\['size'\] !== 0) {
-
-38. return true;
-
-39. } else {
-
-40. echo '&lt;strong&gt; - Nenhum arquivo &lt;em&gt;'. \$nomeCampo
-    .'&lt;/em&gt; para ser enviado!&lt;br /&gt;&lt;/strong&gt;';
-
-41. }
-
-42. 43. }
-
-44. 45. function validaCampo(array \$campo = null)
-
-46. {
-
-47. if (is\_array(\$campo)) {
-
-48. return true;
-
-49. } else {
-
-50. echo '&lt;strong&gt;Erro: O Campo deve ser um
-    array!&lt;/strong&gt;';
-
-51. exit;
-
-52. }
-
-53. 54. if (\$campo) {
-
-55. return true;
-
-56. } else {
-
-57. echo '&lt;strong&gt;Erro: O Campo deve ser
-    informado!&lt;/strong&gt;';
-
-58. exit;
-
-59. }
-
-60. }
-
-61. 62. function upload(\$nomeCampo = null, array \$campo = null)
-
-63. {
-
-64. \$dir = \_\_DIR\_\_ . '/upload/';
-
-65. 66. if (validaNomeCampo(\$nomeCampo)) {
-
-67. if (validaCampo(\$campo)) {
-
-68. \$arquivo = \$uploadfile = \$dir .
-    basename(\$\_FILES\[\$nomeCampo\]\['name'\]);
-
-69. 70. if
-    (move\_uploaded\_file(\$\_FILES\[\$nomeCampo\]\['tmp\_name'\], \$uploadfile))
-    {
-
-71. echo "Arquivo válido e enviado com sucesso.&lt;br /&gt;\\n";
-
-72. } else {
-
-73. echo "Não foi possível gravar oarquivo&lt;br /&gt;\\n";
-
-74. }
-
-75. }
-
-76. }
-
-77. }
-
-78. 79. if (verificaCampoVazio('img', \$\_FILES\['img'\])) {
-
-80. //verificando se upload é uma imagem
-
-81. if (!empty(\$\_FILES\['img'\]) && (\$\_FILES\['img'\]\['type'\] ==
-    'image/jpeg' ||
-
-82. \$\_FILES\['img'\]\['type'\] == 'image/jpg' ||
-
-83. \$\_FILES\['img'\]\['type'\] == 'image/png' ||
-
-84. \$\_FILES\['img'\]\['type'\] == 'image/gif')) :
-
-85. echo 'Grava a imagem no servidor ou banco. Para isso é necessário
-
-86. utilizar \$\_FILES\["img"\]\["tmp\_name"\] e ter permissão de
-    escrita no
-
-87. servidor.&lt;br /&gt;&lt;br /&gt;';
-
-88. 89. upload('img', \$\_FILES\['img'\]);
-
-90. 91. else :
-
-92. echo 'Erro: Arquivo enviado não é uma imagem.&lt;br /&gt;&lt;br
-    /&gt;';
-
-93. endif;
-
-94. }
-
-95. 96. if (verificaCampoVazio('doc', \$\_FILES\['doc'\])) {
-
-97. //verificando se upload é um documento ou planílha ODF ou PDF
-
-98. if (\$\_FILES\['doc'\]\['type'\] ==
-    'application/vnd.oasis.opendocument.spreadsheet' ||
-
-99. \$\_FILES\['doc'\]\['type'\] ==
-    'application/vnd.oasis.opendocument.text' ||
-
-100. \$\_FILES\['doc'\]\['type'\] == 'application/pdf') :
-
-101. echo 'Grava a imagem no servidor ou banco. Para isso é necessário
-
-102. utilizar \$\_FILES\["doc"\]\["tmp\_name"\] e ter permissão de
-    escrita no
-
-103. servidor.&lt;br /&gt;&lt;br /&gt;';
-
-104. 105. upload('doc', \$\_FILES\['doc'\]);
-
-106. 107. else :
-
-108. echo 'Erro: Arquivo enviado não documento ou planílha ODF ou
-    PDF.&lt;br /&gt;&lt;br /&gt;';
-
-109. endif;
-
-110. }
-
-111. 112. endif;
-
-113. ?&gt;
-
-114. ...
-
-*Salve em /home/seu\_usuario/www/PHPBasico/Cap6/formUpload.php, no
+```
+...
+<h1>Upload de arquivo e validação</h1>
+
+<form action="<?= $_SERVER['PHP_SELF'] ?>" name="frmUpload" id="frmUpload" method="post" enctype="multipart/form-data">
+
+    <label>Selecione uma magem:<br /></label>
+    <input type="file" name="img" id="img" accept="image/\*">
+
+    <br /><br />
+    <label>Selecione um Documento:<br /></label>
+    <input type="file" name="doc" id="doc">
+
+    <br /><br />
+    <input type="submit" name="enviar">
+</form>
+
+<?php
+    if ($_POST) :
+        var_dump($_FILES['img']);
+        var_dump($_FILES['doc']);
+
+        function validaNomeCampo($nomeCampo = null)
+        {
+            if ($nomeCampo) {
+                return true;
+            } else {
+                echo '<strong>Erro: O nome do campo deve ser informado!</strong>';
+                exit;
+            }
+        }
+
+        function verificaCampoVazio($nomeCampo = nul, array $campo = null)
+        {
+            if ($_FILES[$nomeCampo]['size'] !== 0) {
+                return true;
+            } else {
+                echo '<strong> - Nenhum arquivo <em>'. $nomeCampo .'</em> para ser enviado!<br /></strong>';
+            }
+        }
+
+        function validaCampo(array $campo = null)
+        {
+            if (is_array($campo)) {
+                return true;
+            } else {
+                echo '<strong>Erro: O Campo deve ser um array!</strong>';
+                exit;
+            }
+
+            if ($campo) {
+                return true;
+            } else {
+                echo '<strong>Erro: O Campo deve ser informado!</strong>';
+                exit;
+            }
+        }
+
+        function upload($nomeCampo = null, array $campo = null)
+        {
+
+            $dir = __DIR__ . '/upload/';
+
+            if (validaNomeCampo($nomeCampo)) {
+                if (validaCampo($campo)) {
+                    $arquivo = $uploadfile = $dir . basename($_FILES[$nomeCampo]['name']);
+
+                    if(move_uploaded_file($_FILES[$nomeCampo]['tmp_name'], $uploadfile))
+                    {
+                        echo "Arquivo válido e enviado com sucesso.<br />\n";
+                    } else {
+                        echo "Não foi possível gravar oarquivo<br />\n";
+                    }
+                }
+            }
+        }
+
+        if (verificaCampoVazio('img', $_FILES['img'])) {            
+            //verificando se upload é uma imagem
+            if (!empty($_FILES['img']) && ($_FILES['img']['type'] == 'image/jpeg' ||
+            $_FILES['img']['type'] == 'image/jpg' ||
+            $_FILES['img']['type'] == 'image/png' ||
+            $_FILES['img']['type'] == 'image/gif')) :
+
+                echo 'Grava a imagem no servidor ou banco. Para isso é necessário utilizar $_FILES["img"]["tmp_name"] e ter permissão de escrita no servidor.<br /><br />';
+
+                upload('img', $_FILES['img']);
+            else :
+                echo 'Erro: Arquivo enviado não é uma imagem.<br /><br/>';
+            endif;
+        }
+
+        if (verificaCampoVazio('doc', $_FILES['doc'])) {
+            //verificando se upload é um documento ou planílha ODF ou PDF
+            if ($_FILES['doc']['type'] == 'application/vnd.oasis.opendocument.spreadsheet' ||
+            $_FILES['doc']['type'] == 'application/vnd.oasis.opendocument.text' ||
+            $_FILES['doc']['type'] == 'application/pdf') :
+                echo 'Grava a imagem no servidor ou banco. Para isso é necessário utilizar $_FILES["doc"]["tmp_name"] e ter permissão de escrita no servidor.<br /><br />';
+
+                upload('doc', $_FILES['doc']);
+            else :
+                'Erro: Arquivo enviado não documento ou planílha ODF ou PDF.<br /><br />';
+            endif;
+        }
+    endif;
+?>
+...
+```
+
+*Salve em /home/seu_usuario/www/PHPBasico/Cap6/formUpload.php, no
 browser digite*
 [*http://localhost/PHPBasico/Cap6/*](http://localhost/PHPBasico/Cap6/formUpload.php)[*formUpload*](http://localhost/PHPBasico/Cap6/formUpload.php)[*.php*](http://localhost/PHPBasico/Cap6/formUpload.php)*.*
 
@@ -527,132 +356,84 @@ que devemos sempre estar atento. Nesse tópico abordaremos mais ponto de
 segurança, o **CSRF**, popularmente conhecido como token de formulário.
 Para facilitar o entendimento e testes, faremos os exercícios em várias
 etapas e dividiremos em 2 arquivos.
+```
+...
+<h1>Evitando o CSRF (Cross Site Request Forgery)</h1>
 
-1.  ...
+<form action="recebeDados.php" name="frmCSRF" id="frmCSRF" method="post">
+    
+    <label>Nome:</label>
+    <input type="text" name="nome" id="nome" maxlength="150" size="50">
 
-2.  &lt;h1&gt;Evitando o CSRF (Cross Site Request Forgery)&lt;/h1&gt;
+    <br />
+    <label>E-mail:</label>
+    <input type="email" name="email" id="email" maxlength="150" size="50">
 
-3.  4.  &lt;form action="recebeDados.php"
+    <br />
+    <label>Comentário:</label>
+    <textarea name="comentario" id="comentario" cols="63" rows="10"></textarea>
 
-5.  name="frmCSRF" id="frmCSRF" method="post"&gt;
+    <br /><br />
+    <input type="submit" name="enviar">
+</form>
+...
+```
 
-6.  7.  &lt;label&gt;Nome:&lt;/label&gt;
-
-8.  &lt;input type="text" name="nome" id="nome" maxlength="150"
-    size="50"&gt;
-
-9.  10. &lt;br /&gt;
-
-11. &lt;label&gt;E-mail:&lt;/label&gt;
-
-12. &lt;input type="email" name="email" id="email" maxlength="150"
-    size="50"&gt;
-
-13. 14. &lt;br /&gt;
-
-15. &lt;label&gt;Comentário:&lt;/label&gt;
-
-16. &lt;textarea name="comentario" id="comentario" cols="63"
-    rows="10"&gt;&lt;/textarea&gt;
-
-17. 18. &lt;br /&gt;&lt;br /&gt;
-
-19. &lt;input type="submit" name="enviar"&gt;
-
-20. &lt;/form&gt;
-
-21. ...
-
-*Salve em /home/seu\_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php, no
+*Salve em /home/seu_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php, no
 browser digite*
 [http://localhost/PHPBasico/Cap6/](http://localhost/PHPBasico/Cap6/formEvitandoCSRF.php)[*formEvitandoCSRF*](http://localhost/PHPBasico/Cap6/formEvitandoCSRF.php)[*.php*](http://localhost/PHPBasico/Cap6/formEvitandoCSRF.php)*.*
 
 Continuando a edição do arquivo criado anteriormente. Nesse momento
 faremos as principais validações e recuperação dos dados enviados pelo
 formulário no PHP. Abra o arquivo
-*home/seu\_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php* e edite logo
-abaixo da tag **&lt;body&gt;**.
+*home/seu_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php* e edite logo
+abaixo da tag **<body>**.
+```
+...
+<body>
+<?php
+    //inicializando variáveis do form
+    $nome = $email = $comentario = null;
+    $erros = [];
 
-1.  ...
+    function exibeErros($campo = null, array $erros = null)
+    {
+        if (isset($erros[$campo])) {
+            echo $erros[$campo];
+            unset($erros[$campo]);
+        }
+    }
 
-2.  &lt;body&gt;
+    //verifica se houve subimit
+    if ($_POST) {
+        extract($_POST);
 
-3.  &lt;?php
+        if (trim($nome) == "") {
+            $erros['nome'] = '<br/><div><strong>Erro:</strong> O Campo <strong>nome</strong> deve ser preenchido.</div>';
+        }
 
-4.  //inicializando variáveis do form
+        if (trim($email) == "") {
+            $erros['email'] = '<br /><div><strong>Erro:</strong> O Campo <strong>e-mail</strong> deve ser preenchido.</div>';
+        }
 
-5.  \$nome = \$email = \$comentario = null;
+        if (trim($comentario) == "") {
+            $erros['comentario'] = '<br /><div><strong>Erro:</strong> O Campo <strong>comentário</strong> deve ser preenchido.</div>';
+        }
 
-6.  \$erros = \[\];
+        //Se não houver erro exibe os dados na tela
+        if (empty($erros)) {
+            echo 'Nome: ' . addslashes(trim($nome)) . '<br />';
+            echo 'E-mail: ' . addslashes(trim($email)) . '<br />';
+            echo 'Comentário:<br /><br />' . addslashes(trim(nl2br($comentario))) . '<br />';
+        }
+    }
+?>
 
-7.  8.  function exibeErros(\$campo = null, array \$erros = null)
+<h1>Evitando o CSRF (Cross Site Request Forgery)</h1>
+...
+```
 
-9.  {
-
-10. if (isset(\$erros\[\$campo\])) {
-
-11. echo \$erros\[\$campo\];
-
-12. unset(\$erros\[\$campo\]);
-
-13. }
-
-14. }
-
-15. //verifica se houve subimit
-
-16. if (\$\_POST) {
-
-17. extract(\$\_POST);
-
-18. 19. if (trim(\$nome) == "") {
-
-20. \$erros\['nome'\] = '&lt;br
-    /&gt;&lt;div&gt;&lt;strong&gt;Erro:&lt;/strong&gt; O Campo
-    &lt;strong&gt;nome&lt;/strong&gt; deve ser preenchido.&lt;/div&gt;';
-
-21. }
-
-22. 23. if (trim(\$email) == "") {
-
-24. \$erros\['email'\] = '&lt;br
-    /&gt;&lt;div&gt;&lt;strong&gt;Erro:&lt;/strong&gt; O Campo
-    &lt;strong&gt;e-mail&lt;/strong&gt; deve ser
-    preenchido.&lt;/div&gt;';
-
-25. }
-
-26. 27. if (trim(\$comentario) == "") {
-
-28. \$erros\['comentario'\] = '&lt;br
-    /&gt;&lt;div&gt;&lt;strong&gt;Erro:&lt;/strong&gt; O Campo
-    &lt;strong&gt;comentário&lt;/strong&gt; deve ser
-    preenchido.&lt;/div&gt;';
-
-29. }
-
-30. 31. //Se não houver erro exibe os dados na tela
-
-32. if (empty(\$erros)) {
-
-33. echo 'Nome: ' . addslashes(trim(\$nome)) . '&lt;br /&gt;';
-
-34. echo 'E-mail: ' . addslashes(trim(\$email)) . '&lt;br /&gt;';
-
-35. echo 'Comentário:&lt;br /&gt;&lt;br /&gt;' .
-    addslashes(trim(nl2br(\$comentario))) . '&lt;br /&gt;';
-
-36. }
-
-37. }
-
-38. ?&gt;
-
-39. &lt;h1&gt;Evitando o CSRF (Cross Site Request Forgery)&lt;/h1&gt;
-
-40. ...
-
-*Salve em /home/seu\_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php, no
+*Salve em /home/seu_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php, no
 browser digite*
 [http://localhost/PHPBasico/Cap6/](http://localhost/PHPBasico/Cap6/formEvitandoCSRF.php)[*formEvitandoCSRF*](http://localhost/PHPBasico/Cap6/formEvitandoCSRF.php)[*.php*](http://localhost/PHPBasico/Cap6/formEvitandoCSRF.php)*.*
 
@@ -666,102 +447,78 @@ o quão vulnerável ainda está seu formulário.
 
 Dando continuidade ao exercício proposto criaremos um arquivo para fazer
 as funções de validações contra o CSRF.
+```
+<?php
+    function geraToken()
+    {
+        return $_SESSION['token'] = base64_encode(openssl_random_pseudo_bytes(32));
+    }
 
-1.  &lt;?php
+    function verificaToken($token)
+    {
+        if (isset($_SESSION['token']) && $token === $_SESSION['token']) {
+            unset($_SESSION['token']);
+            return true;
+        }
 
-2.  3.  function geraToken()
+        return false;
+    }
 
-4.  {
+//essa linha vazia tem que existir.
+```
 
-5.  return \$\_SESSION\['token'\] =
-    base64\_encode(openssl\_random\_pseudo\_bytes(32));
+*Salve em /home/seu_usuario/www/PHPBasico/Cap6/*protecaoContraCSRF.php.
 
-6.  }
-
-7.  8.  function verificaToken(\$token)
-
-9.  {
-
-10. if (isset(\$\_SESSION\['token'\]) && \$token
-    === \$\_SESSION\['token'\]) {
-
-11. unset(\$\_SESSION\['token'\]);
-
-12. return true;
-
-13. }
-
-14. 15. return false;
-
-16. }
-
-17. //essa linha vazia tem que existir.
-
-*Salve em /home/seu\_usuario/www/PHPBasico/Cap6/*protecaoContraCSRF.php.
-
-Continuando a edição do arquivo *ormEvitandoCSRF.php*. Nesse momento
+Continuando a edição do arquivo *formEvitandoCSRF.php*. Nesse momento
 faremos a validação necessária para que a proteção contra o CSRF
 funcione. Abra o arquivo
-*home/seu\_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php* e edite o
+*home/seu_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php* e edite o
 arquivo logo na primeira linha.
-
-1.  &lt;?php
-
-2.  session\_start();
-
-3.  require\_once 'protecaoContraCSRF.php';
-
-4.  ?&gt;
-
-*Salve em /home/seu\_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php.*
+```
+<?php
+    session_start();
+    require_once 'protecaoContraCSRF.php';
+?>
+```
+*Salve em /home/seu_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php.*
 
 *Continue editando o arquivo formEvitandoCSRF.php*. Posicione o cursor
-depois do comentário '*if (\$\_POST) {*', e envolva todo o código PHP
+depois do comentário '*if ($_POST) {*', e envolva todo o código PHP
 com a validação contra o CSRF, como no exercício abaixo.
+```
+...
+//verifica se houve subimit
+if ($_POST) {
+    if (verificaToken(isset($_POST['token']))) {
+        extract($_POST);
 
-1.  ...
+        if (trim($nome) == "") {
+            ...
 
-2.  //verifica se houve subimit
+    } //fim do if (verificaToken())
+    
+    ...
 
-3.  if (\$\_POST) {
-
-4.  if (verificaToken(isset(\$\_POST\['token'\]))) {
-
-5.  extract(\$\_POST);
-
-6.  7.  if (trim(\$nome) == "") {
-
-8.  ...
-
-9.  }// fim do if (verificaToken())
-
-10. ...
-
-11. }// fim do if (\$\_POST)
-
-12. ?&gt;
-
-13. ...
-
-*Salve em /home/seu\_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php*.
+}// fim do if ($_POST)
+?>
+...
+```
+*Salve em /home/seu_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php*.
 
 Agora para finalizar, crie um campo do tipo hidden com o nome token.
 Esse campo pode ser o primeiro campo do formulário.
+```
+...
+<h1>Evitando o CSRF (Cross Site Request Forgery)</h1>
 
-1.  ...
+<form action="" name="frmCSRF" id="frmCSRF" method="post">
+    <input type="hidden" name="token" value="<?= geraToken() ?>" />
 
-2.  &lt;h1&gt;Evitando o CSRF (Cross Site Request Forgery)&lt;/h1&gt;
+    <label>Nome:</label>
+    ...
+```
 
-3.  4.  &lt;form action="" name="frmCSRF" id="frmCSRF" method="post"&gt;
-
-5.  &lt;input type="hidden" name="token" value="&lt;?= geraToken()
-    ?&gt;" /&gt;
-
-6.  7.  &lt;label&gt;Nome:&lt;/label&gt;
-
-8.  ...
-
-*Salve em /home/seu\_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php, no
+*Salve em /home/seu_usuario/www/PHPBasico/Cap6/formEvitandoCSRF.php, no
 browser digite*
 [http://localhost/PHPBasico/Cap6/](http://localhost/PHPBasico/Cap6/formEvitandoCSRF.php)[*formEvitandoCSRF*](http://localhost/PHPBasico/Cap6/formEvitandoCSRF.php)[*.php*](http://localhost/PHPBasico/Cap6/formEvitandoCSRF.php)*.*
 
