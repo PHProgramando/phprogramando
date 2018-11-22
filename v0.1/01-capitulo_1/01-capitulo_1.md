@@ -511,7 +511,7 @@ Referências
 
 Arrays em php é um assunto muito vasto, existem muitas funções internas
 do php só para tratamento de arrays. Conheça essas funções do php em:
-**http://php.net/manual/pt\_BR/book.array.php**
+**https://secure.php.net/manual/pt_BR/book.array.php**
 
 Resumo do capítulo
 ------------------
