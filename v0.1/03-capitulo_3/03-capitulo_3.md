@@ -388,7 +388,7 @@ Exercícios
 
 1.  Crie um script que informe se o aluno foi “Aprovado”, “Reprovado” ou
     está em “Recuperação”. Com os seguintes critérios, maior ou igual a
-    7, aluno está aprovado, menor ou igual a 5, aluno reprovado.
+    6, aluno está aprovado, menor ou igual a 5, aluno reprovado.
 
 2.  Crie uma estrutura de controle com o “switch case” para exibir se um
     modelo de carro é do ano atual ou não.
